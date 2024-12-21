@@ -7,7 +7,7 @@ function App() {
     <>
       <h1>img2ral</h1>
       <div className="box">
-        {Object.keys(PALLETE).map((ral) => {
+        {Object.keys(PALLETE).map((ral, idx) => {
           const [hex, name] = PALLETE[ral]
           const color = adjustColorBrightness(hex, 0.5)
 
@@ -17,7 +17,7 @@ function App() {
               className="ral"
               style={{
                 backgroundColor: hex,
-                border: `1px solid ${color}`,
+                top: idx,
               }}
             >
               <div className="colorName" style={{ color }}>
