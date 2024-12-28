@@ -26,7 +26,7 @@ function App() {
         className="input-modern"
         value={filter}
         onChange={(e) => setFiler(e.target.value)}
-        placeholder="search for color"
+        placeholder="Search for a RAL color..."
       />
       <div className="box">
         <div className="center-circle"></div>
