@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 import { adjustColorBrightness } from './lib/color'
 import { PALLETE } from './lib/ral'
@@ -19,6 +19,21 @@ function App() {
 
   const totalItems = ralColors.length
   const angleIncrement = spread / (totalItems - 1)
+
+  useEffect(() => {
+    const l = ralColors.length
+    if (l < 5) {
+      setSpread(20)
+    } else if (l < 10) {
+      setSpread(90)
+    }
+  }, [ralColors])
+
+  useEffect(() => {
+    if (filter === '') {
+      setSpread(270)
+    }
+  }, [filter])
 
   return (
     <>
