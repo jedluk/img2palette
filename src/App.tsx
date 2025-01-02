@@ -5,6 +5,7 @@ import { PALLETE } from './lib/ral'
 
 function App() {
   const [filter, setFiler] = useState('')
+  const [spread, setSpread] = useState(270)
 
   const ralColors = useMemo(
     () =>
@@ -16,9 +17,8 @@ function App() {
     [filter]
   )
 
-  const totalSpread = 300
   const totalItems = ralColors.length
-  const angleIncrement = totalSpread / (totalItems - 1)
+  const angleIncrement = spread / (totalItems - 1)
 
   return (
     <>
@@ -29,11 +29,14 @@ function App() {
         placeholder="Search for a RAL color..."
       />
       <div className="box">
-        <div className="center-circle"></div>
+        <div className="center-circle">
+          <button onClick={() => setSpread(spread + 10)}>+</button>
+          <button onClick={() => setSpread(spread - 10)}>-</button>
+        </div>
         {ralColors.map((ral, idx) => {
           const [hex, name] = PALLETE[ral]
           const color = adjustColorBrightness(hex, 0.5)
-          const angle = -totalSpread / 2 + idx * angleIncrement
+          const angle = -spread / 2 + idx * angleIncrement
 
           return (
             <div
