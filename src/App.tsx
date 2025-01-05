@@ -65,7 +65,7 @@ function App() {
               }}
             >
               <div className="colorName" style={{ color }}>
-                {name}
+                {name} ({ral.slice(4)})
               </div>
             </div>
           )
