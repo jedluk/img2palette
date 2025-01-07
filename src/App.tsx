@@ -1,21 +1,13 @@
-import { useEffect, useMemo, useState } from 'react'
 import './App.css'
+import { useEffect, useState } from 'react'
 import { adjustColorBrightness } from './lib/color'
 import { PALLETE } from './lib/ral'
+import { Background } from './Background'
 
 function App() {
-  const [filter, setFiler] = useState('')
   const [spread, setSpread] = useState(270)
 
-  const ralColors = useMemo(
-    () =>
-      filter !== ''
-        ? Object.keys(PALLETE).filter((key) =>
-            PALLETE[key][1].toLowerCase().includes(filter.toLowerCase())
-          )
-        : Object.keys(PALLETE),
-    [filter]
-  )
+  const ralColors = Object.keys(PALLETE)
 
   const totalItems = ralColors.length
   const angleIncrement = spread / (totalItems - 1)
@@ -29,21 +21,10 @@ function App() {
     }
   }, [ralColors])
 
-  useEffect(() => {
-    if (filter === '') {
-      setSpread(270)
-    }
-  }, [filter])
-
   return (
     <>
-      <input
-        className="input-modern"
-        value={filter}
-        onChange={(e) => setFiler(e.target.value)}
-        placeholder="Search for a RAL color..."
-      />
-      <div className="box">
+      <Background />
+      <div className="ral-pallette">
         <div className="center-circle">
           <button onClick={() => setSpread(spread + 10)}>+</button>
           <button onClick={() => setSpread(spread - 10)}>-</button>
@@ -56,12 +37,12 @@ function App() {
           return (
             <div
               key={ral}
-              className="ral"
+              className="ral-color"
               style={{
                 backgroundColor: hex,
                 transform: `rotate(${angle}deg)`,
-                top: '50%',
-                marginTop: '-75px', // half of the new height to center it
+                top: 'calc(50% + 35px)',
+                marginTop: '-75px',
               }}
             >
               <div className="colorName" style={{ color }}>

@@ -1,22 +1,19 @@
 #root {
-    max-width: 1280px;
     margin: auto;
-    padding: 2rem;
-    text-align: center;
 }
 
-.box {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
+.ral-pallette {
+    right: 1em;
+    bottom: 1em;
+    width: 300px;
+    height: 300px;
+    position: absolute;
     perspective: 1000px;
 }
 
 .center-circle {
-    --size: 110px;
+    --size: 60px;
     --button-size: calc(var(--size) / 2 - 10px);
-
     position: absolute;
     top: calc(50% - var(--size) / 2);
     left: calc(50% - var(--size) / 2);
@@ -24,7 +21,7 @@
     height: var(--size);
     background-color: #ccc;
     border-radius: 50%;
-    z-index: 9999;
+    z-index: 23;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
@@ -57,24 +54,18 @@
     border-top-right-radius: 0;
 }
 
-.ral {
-    width: 300px;
-    height: 150px;
+.ral-color {
+    width: 150px;
+    height: 75px;
     position: absolute;
     left: 50%;
     transform-origin: left center;
     z-index: 1;
 }
 
-.ral:hover {
+.ral-color:hover {
     z-index: 2;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-@media screen and (max-width: 768px) {
-    .box {
-        width: 400px;
-    }
 }
 
 .colorName {
@@ -84,25 +75,5 @@
     font-weight: bold;
     color: white;
     text-transform: uppercase;
-    font-size: 12px;
-}
-
-.input-modern {
-    width: 80%;
-    max-width: 50%;
-    padding: 0.5rem 1rem;
-    margin: 1rem 0;
-    font-size: 1rem;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    background-color: #ffffff;
-    color: #000000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.input-modern:focus {
-    border-color: #ccc;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    outline: none;
+    font-size: 10px;
 }
