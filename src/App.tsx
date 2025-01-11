@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { adjustColorBrightness } from './lib/color'
 import { PALLETE } from './lib/ral'
 import { Background } from './Background'
+import { Dropzone } from './Dropzone'
 
 function App() {
   const [spread, setSpread] = useState(270)
@@ -24,6 +25,7 @@ function App() {
   return (
     <>
       <Background />
+      <Dropzone />
       <div className="ral-pallette">
         <div className="center-circle">
           <button onClick={() => setSpread(spread + 10)}>+</button>
