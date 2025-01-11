@@ -1,5 +1,5 @@
 import { useCallback, useState, useRef, useEffect } from 'react'
-import { useDropzone } from 'react-dropzone'
+import { FileRejection, useDropzone } from 'react-dropzone'
 import styles from './Dropzone.module.css'
 import Pacman from './assets/pacman.svg'
 
@@ -48,11 +48,22 @@ export function Dropzone() {
     }
   }
 
+  const handleRejection = (rejections: FileRejection[]) => {
+    setHoverDirection('')
+    alert(rejections[0].errors[0].message)
+  }
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     onDragEnter: updateHoverDirection,
     onDragOver: updateHoverDirection,
     onDragLeave: () => setHoverDirection(''),
+    onDropRejected: handleRejection,
+    multiple: false,
+    maxFiles: 1,
+    noClick: true,
+    accept: {
+      'image/*': ['image/png', 'image/jpeg'],
+    },
   })
 
   return (
