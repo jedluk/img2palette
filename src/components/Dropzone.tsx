@@ -61,6 +61,7 @@ export function Dropzone({ onChange }: DropzoneProps) {
     accept: {
       'image/jpg': ['.jpg', '.JPG', '.jpeg', '.JPEG'],
       'image/png': ['.png', '.PNG'],
+      'image/webp': ['.webp', '.WEBP'],
     },
   })
 

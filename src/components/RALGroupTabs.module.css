@@ -1,0 +1,19 @@
+.ralGroupTabs {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.ralGroupTab {
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.selected {
+    color: #fff;
+}
