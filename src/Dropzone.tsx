@@ -3,7 +3,11 @@ import { FileRejection, useDropzone } from 'react-dropzone'
 import styles from './Dropzone.module.css'
 import Pacman from './assets/pacman.svg'
 
-export function Dropzone() {
+interface DropzoneProps {
+  onChange: (file: File) => void
+}
+
+export function Dropzone({ onChange }: DropzoneProps) {
   const [hoverDirection, setHoverDirection] = useState<string>('')
   const dropzoneRef = useRef<HTMLDivElement>(null)
   const [dropzoneRect, setDropzoneRect] = useState<DOMRect | null>(null)
@@ -14,19 +18,12 @@ export function Dropzone() {
     }
   }, [])
 
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    acceptedFiles.forEach((file) => {
-      const reader = new FileReader()
-
-      reader.onabort = () => console.log('file reading was aborted')
-      reader.onerror = () => console.log('file reading has failed')
-      reader.onload = () => {
-        const binaryStr = reader.result
-        console.log(binaryStr)
-      }
-      reader.readAsArrayBuffer(file)
-    })
-  }, [])
+  const onDrop = useCallback(
+    (acceptedFiles: File[]) => {
+      onChange(acceptedFiles[0])
+    },
+    [onChange]
+  )
 
   const updateHoverDirection = (event: React.DragEvent<HTMLElement>) => {
     const { clientX, clientY } = event
@@ -62,7 +59,8 @@ export function Dropzone() {
     maxFiles: 1,
     noClick: true,
     accept: {
-      'image/*': ['image/png', 'image/jpeg'],
+      'image/jpg': [],
+      'image/png': [],
     },
   })
 
