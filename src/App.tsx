@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import './App.css'
-import { Background } from './Background'
-import { Dropzone } from './Dropzone'
-import { RALPallette } from './RALPallette'
-import { ImageDrawer } from './ImageDrawer'
+import { Background } from './components/Background'
+import { Dropzone } from './components/Dropzone'
+import { RALPallette } from './components/RALPallette'
+import { ImageDrawer } from './components/ImageDrawer'
 
 function App() {
   const [file, setFile] = useState<File | null>(null)

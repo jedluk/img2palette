@@ -1,6 +1,5 @@
-import { PALLETE } from './lib/ral'
+import { PALLETE, classNames } from '../lib'
 import style from './Background.module.css'
-import { classNames } from './lib/classNames'
 
 export function Background(props: { animate: boolean }) {
   return (

@@ -1,7 +1,7 @@
 import { useCallback, useState, useRef, useEffect } from 'react'
 import { FileRejection, useDropzone } from 'react-dropzone'
+import Pacman from '../assets/pacman.svg'
 import styles from './Dropzone.module.css'
-import Pacman from './assets/pacman.svg'
 
 interface DropzoneProps {
   onChange: (file: File) => void

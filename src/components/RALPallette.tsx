@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { adjustColorBrightness } from './lib/color'
-import { PALLETE } from './lib/ral'
+import { PALLETE, adjustColorBrightness } from '../lib'
 
 export function RALPallette() {
   const [spread, setSpread] = useState(270)
