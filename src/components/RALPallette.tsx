@@ -7,17 +7,10 @@ export function RALPallette() {
   const [spread, setSpread] = useState(270)
   const [selectedGroups, setSelectedGroups] = useState(RAL_GROUPS)
 
-  const draggablePosition = useMemo(() => {
-    return {
-      x: 300,
-      y: 300,
-    }
-  }, [])
-
   const ralColors = useMemo(
     () =>
       Object.keys(PALLETE).filter((ral) =>
-        selectedGroups.includes(ral.slice(4, 6))
+        selectedGroups.some((group) => ral.startsWith(group.slice(0, 5)))
       ),
     [selectedGroups]
   )
@@ -28,7 +21,7 @@ export function RALPallette() {
   return (
     <>
       <RALGroupTabs onGroupToggle={setSelectedGroups} />
-      <DraggableWrapper initialPosition={draggablePosition}>
+      <DraggableWrapper initialPosition={{ x: 300, y: 300 }}>
         <div className="center-circle">
           <button onClick={() => setSpread(spread + 10)}>+</button>
           <button onClick={() => setSpread(spread - 10)}>-</button>

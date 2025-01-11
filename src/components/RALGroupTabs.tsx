@@ -11,10 +11,9 @@ export function RALGroupTabs({
 
   const getGroupColor = (group: (typeof RAL_GROUPS)[number]) => {
     const groupColors = Object.keys(PALLETE).filter((ral) =>
-      ral.slice(4, 6).startsWith(group)
+      ral.startsWith(group.slice(0, 5))
     )
-    const middleIndex = Math.floor(groupColors.length / 2)
-    return PALLETE[groupColors[middleIndex]][0]
+    return PALLETE[groupColors[groupColors.length - 1]][0]
   }
 
   const handleGroupClick = (group: (typeof RAL_GROUPS)[number]) => {
@@ -38,6 +37,9 @@ export function RALGroupTabs({
             backgroundColor: selectedGroups.includes(group)
               ? getGroupColor(group)
               : '#ccc',
+            ...(selectedGroups.includes(group) && {
+              boxShadow: `0 4px 8px 0 ${getGroupColor(group)}`,
+            }),
           }}
         >
           {group}
