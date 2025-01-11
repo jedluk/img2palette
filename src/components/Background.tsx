@@ -3,16 +3,11 @@ import style from './Background.module.css'
 
 export function Background(props: { animate: boolean }) {
   return (
-    <div
-      className={classNames(
-        style.background,
-        !props.animate ? style.noAnimation : ''
-      )}
-    >
+    <div className={style.background}>
       {Object.values(PALLETE).map(([hex, name]) => (
         <div
           key={name}
-          className={style.item}
+          className={classNames(style.item, props.animate ? style.animate : '')}
           style={{ backgroundColor: hex }}
         />
       ))}

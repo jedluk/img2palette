@@ -18,17 +18,16 @@
 }
 
 .item {
-    opacity: 0.2;
+    opacity: 0.08;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.5s ease-in-out;
-    animation: extraordinaryEffect 4s infinite ease-in-out;
 }
 
-.noAnimation {
-    animation: none !important;
-    opacity: 0.15;
+.animate {
+    opacity: 0.2;
+    transition: transform 0.5s ease-in-out;
+    animation: extraordinaryEffect 4s infinite ease-in-out;
 }
 
 @keyframes moveLeft {
