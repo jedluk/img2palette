@@ -46,9 +46,9 @@ export function Dropzone({ onChange }: DropzoneProps) {
   }
 
   const handleRejection = (rejections: FileRejection[]) => {
-    setHoverDirection('')
     alert(rejections[0].errors[0].message)
   }
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     onDragEnter: updateHoverDirection,
@@ -59,8 +59,8 @@ export function Dropzone({ onChange }: DropzoneProps) {
     maxFiles: 1,
     noClick: true,
     accept: {
-      'image/jpg': [],
-      'image/png': [],
+      'image/jpg': ['.jpg', '.JPG', '.jpeg', '.JPEG'],
+      'image/png': ['.png', '.PNG'],
     },
   })
 
