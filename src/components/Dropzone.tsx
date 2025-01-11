@@ -76,7 +76,7 @@ export function Dropzone({ onChange }: DropzoneProps) {
           <img src={Pacman} className={styles.pacman} alt="Pacman" />
         </div>
       ) : (
-        <p>Drag 'n' drop some files here, or click to select files</p>
+        <p>Drag 'n' drop some files here</p>
       )}
     </div>
   )
