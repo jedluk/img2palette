@@ -26,8 +26,9 @@
     animation: extraordinaryEffect 4s infinite ease-in-out;
 }
 
-.item:nth-child(even) {
-    animation: extraordinaryEffect 4s infinite ease-in-out reverse;
+.noAnimation {
+    animation: none !important;
+    opacity: 0.15;
 }
 
 @keyframes moveLeft {
