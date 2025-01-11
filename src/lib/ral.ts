@@ -216,3 +216,6 @@ PALLETE['RAL 9018'] = ['#CFD3CD', 'Papyrus white']
 PALLETE['RAL 9022'] = ['#9C9C9C', 'Pearl light grey']
 PALLETE['RAL 9023'] = ['#7E8182', 'Pearl dark grey']
 
+export const RAL_GROUPS = Array.from(
+    Object.keys(PALLETE).reduce((acc, groupName) => acc.add(groupName.replace('RAL ', '').slice(0, 2)), new Set())
+).sort()

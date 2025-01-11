@@ -17,9 +17,9 @@ function App() {
         <>
           <ResetButton onClick={() => setFile(null)} />
           <ImageDrawer file={file} />
+          <RALPallette />
         </>
       )}
-      <RALPallette />
     </>
   )
 }
