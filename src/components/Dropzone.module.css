@@ -1,0 +1,78 @@
+.dropzone {
+    --base-width: 600px;
+    --base-height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: calc(1.5 * var(--base-width));
+    height: calc(1.5 * var(--base-height));
+    border: 4px dashed #673ab7;
+    background-color: rgba(103, 58, 183, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #673ab7;
+    font-size: 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .dropzone {
+        max-width: calc(1 * var(--base-width));
+        height: calc(1 * var(--base-height));
+    }
+}
+
+.dropzone.active {
+    background-color: rgba(103, 58, 183, 0.3);
+    border-color: #311b92;
+}
+
+.dropzone p {
+    font-weight: bolder;
+}
+
+.pacmanContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pacman {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    animation: pacman-rotate 0.2s infinite ease-in-out;
+}
+
+.pacmanContainer.right {
+    transform: rotate(0deg);
+}
+
+.pacmanContainer.left {
+    transform: rotate(180deg);
+}
+
+.pacmanContainer.up {
+    transform: rotate(-90deg);
+}
+
+.pacmanContainer.down {
+    transform: rotate(90deg);
+}
+
+@keyframes pacman-rotate {
+
+    0%,
+    100% {
+        transform: rotateZ(0deg);
+    }
+
+    50% {
+        transform: rotateZ(70deg);
+    }
+}
