@@ -20,7 +20,9 @@ export function Dropzone({ onChange }: DropzoneProps) {
 
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
-      onChange(acceptedFiles[0])
+      if (acceptedFiles.length > 0) {
+        onChange(acceptedFiles[0])
+      }
     },
     [onChange]
   )
