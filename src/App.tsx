@@ -5,6 +5,7 @@ import { Dropzone } from './components/Dropzone'
 import { RALPallette } from './components/RALPallette'
 import { ImageDrawer } from './components/ImageDrawer'
 import { ResetButton } from './components/ResetButton'
+import { Disclaimer } from './components/Disclaimer'
 
 function App() {
   const [file, setFile] = useState<File | null>(null)
@@ -21,6 +22,7 @@ function App() {
           <RALPallette />
         </>
       )}
+      <Disclaimer />
     </>
   )
 }

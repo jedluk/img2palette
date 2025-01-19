@@ -10,7 +10,7 @@ export function RALPallette() {
   const ralColors = useMemo(
     () =>
       Object.keys(PALLETE).filter((ral) =>
-        selectedGroups.some((group) => ral.startsWith(group.slice(0, 5)))
+        selectedGroups.some((group) => ral.startsWith(group[0]))
       ),
     [selectedGroups]
   )
@@ -43,7 +43,7 @@ export function RALPallette() {
               }}
             >
               <div className="colorName" style={{ color }}>
-                {name} ({ral.slice(4)})
+                {name} ({ral})
               </div>
             </div>
           )

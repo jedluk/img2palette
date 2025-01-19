@@ -11,7 +11,7 @@ export function RALGroupTabs({
 
   const getGroupColor = (group: (typeof RAL_GROUPS)[number]) => {
     const groupColors = Object.keys(PALLETE).filter((ral) =>
-      ral.startsWith(group.slice(0, 5))
+      ral.startsWith(group[0])
     )
     return PALLETE[groupColors[groupColors.length - 1]][0]
   }
