@@ -1,0 +1,9 @@
+.disclaimer {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}
+
+.disclaimer span {
+    font-size: 1.5em;
+}
