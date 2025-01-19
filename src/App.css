@@ -62,7 +62,7 @@
 
 .colorName {
     position: absolute;
-    left: 2px;
+    right: 2px;
     bottom: 2px;
     font-weight: bold;
     color: white;
