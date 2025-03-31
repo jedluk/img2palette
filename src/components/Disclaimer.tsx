@@ -8,6 +8,12 @@ export function Disclaimer() {
           <span>&copy;</span>
         </abbr>
       </a>
+      <a
+        target="_blank"
+        href="https://staging.riverside.fm/webinar/directlink/eyJzbHVnIjoicmVncmVzc2lvbjE3LTAzLTIwMjUiLCJldmVudElkIjoiNjdlYWIxYzBlYjZkMWQ1NWQ2NjhmNzgxIiwicHJvamVjdElkIjoiNjdlYWIxYzBlYjZkMWQ0MzBjNjhmNzdmIn0="
+      >
+        Dla Mariusza
+      </a>
     </div>
   )
 }
